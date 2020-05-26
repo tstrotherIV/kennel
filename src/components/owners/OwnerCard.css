@@ -1,0 +1,10 @@
+.ownerCard {
+  flex-basis: 30%;
+  border: solid black 2px;
+  padding: 4px;
+}
+
+.ownerImage {
+  max-width: 25px;
+  max-height: auto;
+}
