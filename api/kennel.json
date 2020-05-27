@@ -1,0 +1,22 @@
+{
+  "animals": [
+    { "id": 1, "name": "Doodles", "breed": "Poodle" },
+    { "id": 2, "name": "Decker", "breed": "German Shepherd" },
+    { "id": 3, "name": "Esme", "breed": "Pitbull" }
+  ],
+  "employees": [
+    { "id": 1, "name": "James Doe", "status": "Full Time" },
+    { "id": 2, "name": "John Doe", "status": "Part Time" },
+    { "id": 3, "name": "Marry Doe", "status": "Full Time" }
+  ],
+  "locations": [
+    { "id": 1, "city": "Nashville", "state": "TN" },
+    { "id": 2, "city": "Jamestown", "state": "Il" },
+    { "id": 3, "city": "St. Louis", "state": "MO" }
+  ],
+  "owners": [
+    { "id": 1, "firstName": "Michael", "lastName": "Trimble" },
+    { "id": 2, "firstName": "Austin", "lastName": "knox" },
+    { "id": 3, "firstName": "Amy", "lastName": "Spartin" }
+  ]
+}
