@@ -1,7 +1,7 @@
 import React from "react";
 import "./LocationCard.css";
 
-const LocationCard = () => {
+const LocationCard = (props) => {
   return (
     <div className="locationCard">
       <div className="locationCard-content">
@@ -13,10 +13,11 @@ const LocationCard = () => {
           />
         </picture>
         <h3>
-          Where:{" "}
-          <span className="card-locationAddress">Who Konws where we are</span>
+          Where: <span className="card-locationAddress">You are here!</span>
         </h3>
-        <p>Address: Keep Guessing</p>
+        <p>
+          {props.location.city}, {props.location.state}
+        </p>
       </div>
     </div>
   );
