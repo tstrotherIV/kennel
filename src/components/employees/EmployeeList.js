@@ -12,6 +12,12 @@ const EmployeeList = (props) => {
     });
   };
 
+  const deleteEmployee = (id) => {
+    EmployeeManager.delete(id).then(() =>
+      EmployeeManager.getAll().then(setEmployees)
+    );
+  };
+
   useEffect(() => {
     getEmployees();
   }, []);
@@ -19,7 +25,11 @@ const EmployeeList = (props) => {
   return (
     <div className="container-cards">
       {employees.map((employee) => (
-        <EmployeeCard key={employee.id} employee={employee} />
+        <EmployeeCard
+          key={employee.id}
+          employee={employee}
+          deleteEmployee={deleteEmployee}
+        />
       ))}
     </div>
   );

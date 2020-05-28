@@ -12,6 +12,12 @@ const LocationList = () => {
     });
   };
 
+  const deleteLocation = (id) => {
+    locationManager
+      .delete(id)
+      .then(() => locationManager.getAll().then(setLocations));
+  };
+
   useEffect(() => {
     getAnimals();
   }, []);
@@ -19,7 +25,11 @@ const LocationList = () => {
   return (
     <div className="container-cards">
       {locations.map((location) => (
-        <LocationCard key={location.id} location={location} />
+        <LocationCard
+          key={location.id}
+          location={location}
+          deleteLocation={deleteLocation}
+        />
       ))}
     </div>
   );
