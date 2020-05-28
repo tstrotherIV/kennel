@@ -1,12 +1,14 @@
-.locationCard {
+.parkCard {
+  flex-basis: 30%;
+  border: solid black 2px;
   padding: 4px;
   margin: 8px;
   box-shadow: 5px 10px 20px;
 }
 
-.locationPinImage {
+.parkImage {
   max-width: 25px;
-  max-height: 25px;
+  max-height: auto;
 }
 
 .delete-btn {
