@@ -18,6 +18,14 @@ const EmployeeCard = (props) => {
           Employee Status: <span className="">{props.employee.status}</span>
         </h3>
       </div>
+      <button
+        onClick={() => {
+          props.deleteEmployee(props.employee.id);
+        }}
+        className="delete-btn"
+      >
+        Fire Employee
+      </button>
     </div>
   );
 };
