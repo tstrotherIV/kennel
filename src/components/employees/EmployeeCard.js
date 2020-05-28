@@ -1,5 +1,6 @@
 import React from "react";
 import "./EmployeeCard.css";
+import { Link } from "react-router-dom";
 
 const EmployeeCard = (props) => {
   return (
@@ -26,6 +27,9 @@ const EmployeeCard = (props) => {
       >
         Fire Employee
       </button>
+      <Link to={`/employees/${props.employee.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };

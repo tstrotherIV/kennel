@@ -7,7 +7,6 @@ const OwnerList = () => {
 
   const getOwners = () => {
     return OwnerManager.getAll().then((ownersFromAPI) => {
-      console.log(ownersFromAPI);
       setOwners(ownersFromAPI);
     });
   };

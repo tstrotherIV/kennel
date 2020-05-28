@@ -1,5 +1,6 @@
 import React from "react";
 import "./OwnerCard.css";
+import { Link } from "react-router-dom";
 
 const OwnerCard = (props) => {
   return (
@@ -27,6 +28,9 @@ const OwnerCard = (props) => {
       >
         Remove Owner
       </button>
+      <Link to={`/owners/${props.owner.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Park.css";
+import { Link } from "react-router-dom";
 
 const ParkCard = (props) => {
   return (
@@ -24,6 +25,9 @@ const ParkCard = (props) => {
       >
         Remove Park
       </button>
+      <Link to={`/parks/${props.park.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };

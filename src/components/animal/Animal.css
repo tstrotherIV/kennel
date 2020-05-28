@@ -1,12 +1,13 @@
 .card {
   /* Add shadows to create the "card" effect */
   display: flex;
+  flex-wrap: wrap;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   background: aliceblue;
   margin-bottom: 2em;
-  flex: 0 1 45%;
+  flex: 0 2 30%;
 }
 
 .card-content {

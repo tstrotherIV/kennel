@@ -7,6 +7,11 @@ import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import OwnerList from "./owners/OwnerList";
 import ParkList from "./park/ParkList";
+import AnimalDetail from "./animal/AnimalDetail";
+import OwnerDetail from "./owners/OwnerDetail";
+import EmployeeDetail from "./employees/EmployeeDetail";
+import LocationDetail from "./locations/LocationDetail";
+import ParkDetail from "./park/ParkDetail";
 
 const ApplicationViews = () => {
   return (
@@ -19,33 +24,78 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/animals"
         render={(props) => {
           return <AnimalList />;
         }}
       />
       <Route
+        path="/animals/:animalId(\d+)"
+        render={(props) => {
+          return (
+            <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+          );
+        }}
+      />
+      <Route
+        exact
         path="/owners"
         render={(props) => {
           return <OwnerList />;
         }}
       />
       <Route
+        path="/owners/:ownerId(\d+)"
+        render={(props) => {
+          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />;
+        }}
+      />
+      <Route
+        exact
         path="/employees"
         render={(props) => {
           return <EmployeeList />;
         }}
       />
       <Route
+        path="/employees/:employeeId(\d+)"
+        render={(props) => {
+          return (
+            <EmployeeDetail
+              employeeId={parseInt(props.match.params.employeeId)}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
         path="/locations"
         render={(props) => {
           return <LocationList />;
         }}
       />
       <Route
+        path="/locations/:locationId(\d+)"
+        render={(props) => {
+          return (
+            <LocationDetail
+              locationId={parseInt(props.match.params.locationId)}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
         path="/parks"
         render={(props) => {
           return <ParkList />;
+        }}
+      />
+      <Route
+        path="/parks/:parkId(\d+)"
+        render={(props) => {
+          return <ParkDetail parkId={parseInt(props.match.params.parkId)} />;
         }}
       />
     </React.Fragment>
