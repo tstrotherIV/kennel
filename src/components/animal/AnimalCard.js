@@ -1,13 +1,17 @@
 import React from "react";
-import "./Animal.css";
+import "./AnimalCard.css";
 import { Link } from "react-router-dom";
 
 const AnimalCard = (props) => {
   return (
-    <div className="card">
+    <div className="animalCard">
       <div className="card-content">
         <picture>
-          <img src={require("./dog.svg")} alt="My Dog" />
+          <img
+            className="animalImage"
+            src={require("./dog.svg")}
+            alt="My Dog"
+          />
         </picture>
         <h3>
           Name: <span className="card-petname">{props.animal.name}</span>

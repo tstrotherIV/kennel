@@ -1,5 +1,5 @@
 import React from "react";
-import "./Park.css";
+import "./ParkCard.css";
 import { Link } from "react-router-dom";
 
 const ParkCard = (props) => {

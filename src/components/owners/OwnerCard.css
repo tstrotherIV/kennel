@@ -2,9 +2,19 @@
   flex-basis: 30%;
   border: solid black 2px;
   padding: 4px;
+  margin: 8px;
+  box-shadow: 5px 10px 20px;
 }
 
 .ownerImage {
   max-width: 25px;
   max-height: auto;
+}
+
+.delete-btn {
+  background-color: red;
+}
+
+.delete-btn:hover {
+  background-color: lightblue;
 }
