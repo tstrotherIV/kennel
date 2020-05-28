@@ -6,6 +6,7 @@ import AnimalList from "./animal/AnimalList";
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import OwnerList from "./owners/OwnerList";
+import ParkList from "./park/ParkList";
 
 const ApplicationViews = () => {
   return (
@@ -39,6 +40,12 @@ const ApplicationViews = () => {
         path="/locations"
         render={(props) => {
           return <LocationList />;
+        }}
+      />
+      <Route
+        path="/parks"
+        render={(props) => {
+          return <ParkList />;
         }}
       />
     </React.Fragment>

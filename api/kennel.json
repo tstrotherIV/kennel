@@ -46,5 +46,17 @@
       "firstName": "Austin",
       "lastName": "knox"
     }
+  ],
+  "parks": [
+    {
+      "id": 1,
+      "name": "Puppy Park Central",
+      "city": "Nashville"
+    },
+    {
+      "id": 2,
+      "name": "Pups Delux",
+      "city": "White House"
+    }
   ]
 }
