@@ -4,6 +4,14 @@ import "./OwnerDetail.css";
 
 const OwnerDetail = (props) => {
   const [owner, setOwner] = useState({ firstName: "", lastName: "" });
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleDelete = () => {
+    setIsLoading(true);
+    OwnerManager.delete(props.ownerId).then(() =>
+      props.history.push("/owners")
+    );
+  };
 
   useEffect(() => {
     OwnerManager.get(props.ownerId).then((owner) => {
@@ -11,6 +19,7 @@ const OwnerDetail = (props) => {
         firstName: owner.firstName,
         lastName: owner.lastName,
       });
+      setIsLoading(false);
     });
   }, [props.ownerId]);
 
@@ -30,6 +39,9 @@ const OwnerDetail = (props) => {
             {owner.firstName} {owner.lastName}
           </span>
         </h3>
+        <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Discharge
+        </button>
       </div>
     </div>
   );

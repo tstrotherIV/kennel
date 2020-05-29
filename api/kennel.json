@@ -1,19 +1,14 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle"
-    },
-    {
-      "id": 11,
-      "name": "Turkey",
-      "breed": "Who knows"
-    },
-    {
       "id": 2,
-      "name": "Decker",
-      "breed": "German Shepherd"
+      "name": "Smokey",
+      "breed": "Smarty Pants"
+    },
+    {
+      "id": 3,
+      "name": "Gerbilishess",
+      "breed": "Hippo"
     }
   ],
   "employees": [
@@ -24,16 +19,11 @@
     },
     {
       "id": 2,
-      "name": "John Doe",
-      "status": "Part Time"
+      "name": "Mark Murphy",
+      "status": "Full Time"
     }
   ],
   "locations": [
-    {
-      "id": 1,
-      "city": "Nashville",
-      "state": "TN"
-    },
     {
       "id": 2,
       "city": "Jamestown",
@@ -45,11 +35,6 @@
       "id": 1,
       "firstName": "Michael",
       "lastName": "Trimble"
-    },
-    {
-      "id": 2,
-      "firstName": "Austin",
-      "lastName": "knox"
     }
   ],
   "parks": [
@@ -60,8 +45,13 @@
     },
     {
       "id": 2,
-      "name": "Pups Delux",
-      "city": "White House"
+      "name": "Turn Around Park",
+      "city": "Nashville"
+    },
+    {
+      "id": 3,
+      "name": "Lickem",
+      "city": "Columbia"
     }
   ]
 }
