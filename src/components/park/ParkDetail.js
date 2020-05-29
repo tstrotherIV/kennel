@@ -4,6 +4,12 @@ import "./ParkDetail.css";
 
 const ParkDetail = (props) => {
   const [park, setPark] = useState({ name: "", city: "" });
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleDelete = () => {
+    setIsLoading(true);
+    ParkManager.delete(props.parkId).then(() => props.history.push("/parks"));
+  };
 
   useEffect(() => {
     ParkManager.get(props.parkId).then((park) => {
@@ -11,6 +17,7 @@ const ParkDetail = (props) => {
         name: park.name,
         city: park.city,
       });
+      setIsLoading(false);
     });
   }, [props.parkId]);
 
@@ -27,6 +34,9 @@ const ParkDetail = (props) => {
         <h3>
           Park Name: <span className="card-parkName">{park.name}</span>
         </h3>
+        <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Close
+        </button>
       </div>
     </div>
   );

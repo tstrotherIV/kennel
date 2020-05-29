@@ -4,6 +4,14 @@ import "./LocationDetail.css";
 
 const LocationDetail = (props) => {
   const [location, setLocation] = useState({ city: "", state: "" });
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleDelete = () => {
+    setIsLoading(true);
+    LocationManager.delete(props.locationId).then(() =>
+      props.history.push("/locations")
+    );
+  };
 
   useEffect(() => {
     LocationManager.get(props.locationId).then((location) => {
@@ -11,6 +19,7 @@ const LocationDetail = (props) => {
         city: location.city,
         state: location.state,
       });
+      setIsLoading(false);
     });
   }, [props.locationId]);
 
@@ -30,6 +39,9 @@ const LocationDetail = (props) => {
         <p>
           {location.city}, {location.state}
         </p>
+        <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Close
+        </button>
       </div>
     </div>
   );

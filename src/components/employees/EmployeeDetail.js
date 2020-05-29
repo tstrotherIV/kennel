@@ -4,6 +4,14 @@ import "./EmployeeDetail.css";
 
 const EmployeeDetail = (props) => {
   const [employee, setEmployee] = useState({ name: "", status: "" });
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleDelete = () => {
+    setIsLoading(true);
+    EmployeeManager.delete(props.employeeId).then(() =>
+      props.history.push("/employees")
+    );
+  };
 
   useEffect(() => {
     EmployeeManager.get(props.employeeId).then((employee) => {
@@ -11,6 +19,7 @@ const EmployeeDetail = (props) => {
         name: employee.name,
         status: employee.status,
       });
+      setIsLoading(false);
     });
   }, [props.employeeId]);
 
@@ -29,6 +38,9 @@ const EmployeeDetail = (props) => {
           <br></br>
           Employee Status: <span className="">{employee.status}</span>
         </h3>
+        <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Fire
+        </button>
       </div>
     </div>
   );

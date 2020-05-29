@@ -34,7 +34,10 @@ const ApplicationViews = () => {
         path="/animals/:animalId(\d+)"
         render={(props) => {
           return (
-            <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+            <AnimalDetail
+              animalId={parseInt(props.match.params.animalId)}
+              {...props}
+            />
           );
         }}
       />
@@ -48,7 +51,12 @@ const ApplicationViews = () => {
       <Route
         path="/owners/:ownerId(\d+)"
         render={(props) => {
-          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />;
+          return (
+            <OwnerDetail
+              ownerId={parseInt(props.match.params.ownerId)}
+              {...props}
+            />
+          );
         }}
       />
       <Route
@@ -64,6 +72,7 @@ const ApplicationViews = () => {
           return (
             <EmployeeDetail
               employeeId={parseInt(props.match.params.employeeId)}
+              {...props}
             />
           );
         }}
@@ -81,6 +90,7 @@ const ApplicationViews = () => {
           return (
             <LocationDetail
               locationId={parseInt(props.match.params.locationId)}
+              {...props}
             />
           );
         }}
@@ -95,7 +105,12 @@ const ApplicationViews = () => {
       <Route
         path="/parks/:parkId(\d+)"
         render={(props) => {
-          return <ParkDetail parkId={parseInt(props.match.params.parkId)} />;
+          return (
+            <ParkDetail
+              parkId={parseInt(props.match.params.parkId)}
+              {...props}
+            />
+          );
         }}
       />
     </React.Fragment>
