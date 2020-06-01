@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ParkCard from "./ParkCard";
 import ParkManager from "../../modules/ParkManager";
 
-const ParkList = () => {
+const ParkList = (props) => {
   const [parks, setParks] = useState([]);
 
   const getParks = () => {
@@ -21,11 +21,24 @@ const ParkList = () => {
   }, []);
 
   return (
-    <div className="container-cards">
-      {parks.map((park) => (
-        <ParkCard key={park.id} park={park} deletePark={deletePark} />
-      ))}
-    </div>
+    <>
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/parks/new");
+          }}
+        >
+          Admit Animal
+        </button>
+      </section>
+      <div className="container-cards">
+        {parks.map((park) => (
+          <ParkCard key={park.id} park={park} deletePark={deletePark} />
+        ))}
+      </div>
+    </>
   );
 };
 

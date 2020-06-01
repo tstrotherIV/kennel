@@ -12,4 +12,13 @@ export default {
       method: "DELETE",
     }).then((result) => result.json());
   },
+  post(newPark) {
+    return fetch(`${remoteURL}/parks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPark),
+    }).then((data) => data.json());
+  },
 };

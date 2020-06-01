@@ -12,6 +12,11 @@ import OwnerDetail from "./owners/OwnerDetail";
 import EmployeeDetail from "./employees/EmployeeDetail";
 import LocationDetail from "./locations/LocationDetail";
 import ParkDetail from "./park/ParkDetail";
+import AnimalForm from "./animal/AnimalForm";
+import LocationForm from "./locations/LocationForm";
+import EmployeeForm from "./employees/EmployeeForm";
+import OwnerForm from "./owners/OwnerForm";
+import ParkForm from "./park/ParkForm";
 
 const ApplicationViews = () => {
   return (
@@ -27,7 +32,7 @@ const ApplicationViews = () => {
         exact
         path="/animals"
         render={(props) => {
-          return <AnimalList />;
+          return <AnimalList {...props} />;
         }}
       />
       <Route
@@ -45,7 +50,7 @@ const ApplicationViews = () => {
         exact
         path="/owners"
         render={(props) => {
-          return <OwnerList />;
+          return <OwnerList {...props} />;
         }}
       />
       <Route
@@ -63,7 +68,7 @@ const ApplicationViews = () => {
         exact
         path="/employees"
         render={(props) => {
-          return <EmployeeList />;
+          return <EmployeeList {...props} />;
         }}
       />
       <Route
@@ -81,7 +86,7 @@ const ApplicationViews = () => {
         exact
         path="/locations"
         render={(props) => {
-          return <LocationList />;
+          return <LocationList {...props} />;
         }}
       />
       <Route
@@ -99,7 +104,7 @@ const ApplicationViews = () => {
         exact
         path="/parks"
         render={(props) => {
-          return <ParkList />;
+          return <ParkList {...props} />;
         }}
       />
       <Route
@@ -111,6 +116,36 @@ const ApplicationViews = () => {
               {...props}
             />
           );
+        }}
+      />
+      <Route
+        path="/animals/new"
+        render={(props) => {
+          return <AnimalForm {...props} />;
+        }}
+      />
+      <Route
+        path="/locations/new"
+        render={(props) => {
+          return <LocationForm {...props} />;
+        }}
+      />
+      <Route
+        path="/employees/new"
+        render={(props) => {
+          return <EmployeeForm {...props} />;
+        }}
+      />
+      <Route
+        path="/owners/new"
+        render={(props) => {
+          return <OwnerForm {...props} />;
+        }}
+      />
+      <Route
+        path="/parks/new"
+        render={(props) => {
+          return <ParkForm {...props} />;
         }}
       />
     </React.Fragment>
