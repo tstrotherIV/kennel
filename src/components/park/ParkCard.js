@@ -14,7 +14,10 @@ const ParkCard = (props) => {
           />
         </picture>
         <h3>
-          Park Name: <span className="card-parkName">{props.park.name}</span>
+          Park Name:{" "}
+          <span className="card-parkName">
+            {props.park.name} in {props.park.city}
+          </span>
         </h3>
       </div>
       <button

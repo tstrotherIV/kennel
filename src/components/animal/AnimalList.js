@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import AnimalCard from "./AnimalCard";
 import AnimalManager from "../../modules/AnimalManager";
 
-const AnimalList = () => {
+const AnimalList = (props) => {
   const [animals, setAnimals] = useState([]);
 
   const getAnimals = () => {
     return AnimalManager.getAll().then((animalsFromAPI) => {
-      console.log(animalsFromAPI);
       setAnimals(animalsFromAPI);
     });
   };
@@ -23,15 +22,28 @@ const AnimalList = () => {
   }, []);
 
   return (
-    <div className="container-cards">
-      {animals.map((animal) => (
-        <AnimalCard
-          key={animal.id}
-          animal={animal}
-          deleteAnimal={deleteAnimal}
-        />
-      ))}
-    </div>
+    <>
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/animals/new");
+          }}
+        >
+          Admit Animal
+        </button>
+      </section>
+      <div className="container-cards">
+        {animals.map((animal) => (
+          <AnimalCard
+            key={animal.id}
+            animal={animal}
+            deleteAnimal={deleteAnimal}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

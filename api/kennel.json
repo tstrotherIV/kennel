@@ -1,14 +1,24 @@
 {
   "animals": [
     {
-      "id": 2,
-      "name": "Smokey",
-      "breed": "Smarty Pants"
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
     },
     {
-      "id": 3,
-      "name": "Gerbilishess",
-      "breed": "Hippo"
+      "id": 11,
+      "name": "Turkey",
+      "breed": "Who knows"
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Shepherd"
+    },
+    {
+      "name": "Higgs",
+      "breed": "Still dont know",
+      "id": 12
     }
   ],
   "employees": [
@@ -19,15 +29,45 @@
     },
     {
       "id": 2,
-      "name": "Mark Murphy",
-      "status": "Full Time"
+      "name": "John Doe",
+      "status": "Part Time"
+    },
+    {
+      "name": "Tom Strother",
+      "status": "who knows",
+      "id": 3
+    },
+    {
+      "firstName": "Thomas",
+      "lastName": "Strother",
+      "id": 4
+    },
+    {
+      "firstName": "Thomas",
+      "lastName": "Strother IV",
+      "id": 5
+    },
+    {
+      "firstName": "Thomas",
+      "lastName": "Strother IV",
+      "id": 6
     }
   ],
   "locations": [
     {
+      "id": 1,
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
       "id": 2,
       "city": "Jamestown",
       "state": "Il"
+    },
+    {
+      "city": "White House",
+      "state": "TN",
+      "id": 3
     }
   ],
   "owners": [
@@ -35,6 +75,16 @@
       "id": 1,
       "firstName": "Michael",
       "lastName": "Trimble"
+    },
+    {
+      "id": 2,
+      "firstName": "Austin",
+      "lastName": "knox"
+    },
+    {
+      "firstName": "Thomas",
+      "lastName": "Strother IV",
+      "id": 3
     }
   ],
   "parks": [
@@ -45,13 +95,13 @@
     },
     {
       "id": 2,
-      "name": "Turn Around Park",
-      "city": "Nashville"
+      "name": "Pups Delux",
+      "city": "White House"
     },
     {
-      "id": 3,
-      "name": "Lickem",
-      "city": "Columbia"
+      "name": "City Park",
+      "city": "James Town",
+      "id": 3
     }
   ]
 }
