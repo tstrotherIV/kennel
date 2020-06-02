@@ -26,6 +26,12 @@ const AnimalCard = (props) => {
       >
         Release Animal
       </button>
+      <button
+        type="button"
+        onClick={() => props.history.push(`/animals/${props.animal.id}/edit`)}
+      >
+        Edit
+      </button>
       <Link to={`/animals/${props.animal.id}`}>
         <button>Details</button>
       </Link>

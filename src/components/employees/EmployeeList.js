@@ -31,7 +31,7 @@ const EmployeeList = (props) => {
             props.history.push("/employees/new");
           }}
         >
-          Admit Animal
+          Add Employee
         </button>
       </section>
       <div className="container-cards">
@@ -40,6 +40,7 @@ const EmployeeList = (props) => {
             key={employee.id}
             employee={employee}
             deleteEmployee={deleteEmployee}
+            {...props}
           />
         ))}
       </div>

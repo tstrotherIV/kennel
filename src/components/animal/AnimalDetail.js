@@ -15,7 +15,6 @@ const AnimalDetail = (props) => {
   };
 
   useEffect(() => {
-    //get(id) from AnimalManager and hang on to the data; put it into state
     AnimalManager.get(props.animalId).then((animal) => {
       setAnimal({
         name: animal.name,

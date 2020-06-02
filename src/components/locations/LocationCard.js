@@ -28,6 +28,14 @@ const LocationCard = (props) => {
       >
         Close Location
       </button>
+      <button
+        type="button"
+        onClick={() =>
+          props.history.push(`/locations/${props.location.id}/edit`)
+        }
+      >
+        Edit
+      </button>
       <Link to={`/locations/${props.location.id}`}>
         <button>Details</button>
       </Link>

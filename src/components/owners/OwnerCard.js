@@ -28,6 +28,12 @@ const OwnerCard = (props) => {
       >
         Remove Owner
       </button>
+      <button
+        type="button"
+        onClick={() => props.history.push(`/animals/${props.animal.id}/edit`)}
+      >
+        Edit
+      </button>
       <Link to={`/owners/${props.owner.id}`}>
         <button>Details</button>
       </Link>
