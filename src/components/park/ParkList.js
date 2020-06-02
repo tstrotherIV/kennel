@@ -30,12 +30,17 @@ const ParkList = (props) => {
             props.history.push("/parks/new");
           }}
         >
-          Admit Animal
+          Add Park
         </button>
       </section>
       <div className="container-cards">
         {parks.map((park) => (
-          <ParkCard key={park.id} park={park} deletePark={deletePark} />
+          <ParkCard
+            key={park.id}
+            park={park}
+            deletePark={deletePark}
+            {...props}
+          />
         ))}
       </div>
     </>

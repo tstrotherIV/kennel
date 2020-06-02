@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ParkManager from "../../modules/ParkManager";
 import "./ParkForm.css";
 
-const ParkForm = (props) => {
-  const [park, setpark] = useState({ name: "", city: "" });
+const ParkEditForm = (props) => {
+  const [park, setPark] = useState({ name: "", city: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
     const stateToChange = { ...park };
     stateToChange[evt.target.id] = evt.target.value;
-    setpark(stateToChange);
+    setPark(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create park      object, invoke the ParkManager post method, and redirect to the full park list
-   */
-  const constructNewPark = (evt) => {
+  const updateExistingpark = (evt) => {
     evt.preventDefault();
-    if (park.name === "" || park.city === "") {
-      window.alert("Please input an park name and city");
-    } else {
-      setIsLoading(true);
-      // Create the park and redirect user to park list
-      ParkManager.post(park).then(() => props.history.push("/parks"));
-    }
+    setIsLoading(true);
+
+    // This is an edit, so we need the id
+    const editedPark = {
+      id: props.match.params.parkId,
+      name: park.name,
+      city: park.city,
+    };
+
+    ParkManager.update(editedPark).then(() => props.history.push("/parks"));
   };
+
+  useEffect(() => {
+    ParkManager.get(props.match.params.parkId).then((park) => {
+      setPark(park);
+      setIsLoading(false);
+    });
+  }, []);
 
   return (
     <>
@@ -33,27 +41,29 @@ const ParkForm = (props) => {
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="name"
-              placeholder="park name"
+              value={park.name}
             />
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">park name</label>
+
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="city"
-              placeholder="city"
+              value={park.city}
             />
             <label htmlFor="city">city</label>
-            <label className="alignRight">Assign to Caretaker </label>
           </div>
-
           <div className="alignRight">
             <button
               type="button"
               disabled={isLoading}
-              onClick={constructNewPark}
+              onClick={updateExistingpark}
+              className="btn btn-primary"
             >
               Submit
             </button>
@@ -64,4 +74,4 @@ const ParkForm = (props) => {
   );
 };
 
-export default ParkForm;
+export default ParkEditForm;

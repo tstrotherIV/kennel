@@ -28,6 +28,12 @@ const ParkCard = (props) => {
       >
         Remove Park
       </button>
+      <button
+        type="button"
+        onClick={() => props.history.push(`/parks/${props.park.id}/edit`)}
+      >
+        Edit
+      </button>
       <Link to={`/parks/${props.park.id}`}>
         <button>Details</button>
       </Link>

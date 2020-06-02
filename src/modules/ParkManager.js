@@ -21,4 +21,13 @@ export default {
       body: JSON.stringify(newPark),
     }).then((data) => data.json());
   },
+  update(editedPark) {
+    return fetch(`${remoteURL}/parks/${editedPark.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedPark),
+    }).then((data) => data.json());
+  },
 };

@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "name": "Decker",
+      "name": "Decker and Shaw",
       "breed": "German Shepherd"
     },
     {
@@ -24,17 +24,17 @@
   "employees": [
     {
       "id": 1,
-      "name": "James Doe",
-      "status": "Full Time"
+      "firstName": "Thomas",
+      "lastName": "Strother"
     },
     {
       "id": 2,
-      "name": "John Doe",
-      "status": "Part Time"
+      "firstName": "Thomas",
+      "lastName": "Strother"
     },
     {
-      "name": "Tom Strother",
-      "status": "who knows",
+      "firstName": "Thomas",
+      "lastName": "Strother",
       "id": 3
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": 1,
       "city": "Nashville",
-      "state": "TN"
+      "state": "MO"
     },
     {
       "id": 2,
@@ -91,7 +91,7 @@
     {
       "id": 1,
       "name": "Puppy Park Central",
-      "city": "Nashville"
+      "city": "MO"
     },
     {
       "id": 2,

@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import AnimalManager from "../../modules/AnimalManager";
+import EmployeeManager from "../../modules/EmployeeManager";
 import "./AnimalForm.css";
 
 const AnimalForm = (props) => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
+  const [employees, setEmployees] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const getEmployees = () => {
+    return EmployeeManager.getAll().then((emps) => {
+      setEmployees(emps);
+    });
+  };
 
   const handleFieldChange = (evt) => {
     const stateToChange = { ...animal };
@@ -24,6 +32,10 @@ const AnimalForm = (props) => {
       AnimalManager.post(animal).then(() => props.history.push("/animals"));
     }
   };
+
+  // useEffect(() => {
+  //   getEmployees();
+  // }, []);
 
   return (
     <>
@@ -47,6 +59,16 @@ const AnimalForm = (props) => {
             />
             <label htmlFor="breed">Breed</label>
           </div>
+          <select
+            value={animal.employeeId}
+            id="employeeId"
+            onChange={handleFieldChange}
+          >
+            <option value="">Please choose a caretaker</option>
+            {employees.map((emp) => (
+              <option value={emp.id}>{emp.name}</option>
+            ))}
+          </select>
           <div className="alignRight">
             <button
               type="button"
