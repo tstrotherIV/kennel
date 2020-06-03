@@ -17,7 +17,8 @@ const Login = (props) => {
         the customer enters into session storage.
         ...Let's just trust the user... That's a good idea, right????
     */
-    sessionStorage.setItem("credentials", JSON.stringify(credentials));
+    // sessionStorage.setItem("credentials", JSON.stringify(credentials));
+    props.setUser(credentials);
     props.history.push("/");
   };
 

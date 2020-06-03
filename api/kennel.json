@@ -1,63 +1,50 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle"
-    },
-    {
       "id": 11,
-      "name": "Turkey",
-      "breed": "Who knows"
+      "name": "Chaged",
+      "breed": "still wondering",
+      "employeeId": "3"
     },
     {
       "id": 2,
       "name": "Decker and Shaw",
-      "breed": "German Shepherd"
+      "breed": "German Shepherd",
+      "employeeId": 3
     },
     {
       "name": "Higgs",
       "breed": "Still dont know",
-      "id": 12
+      "id": 12,
+      "employeeId": 2
     }
   ],
   "employees": [
     {
-      "id": 1,
-      "firstName": "Thomas",
-      "lastName": "Strother"
-    },
-    {
       "id": 2,
-      "firstName": "Thomas",
-      "lastName": "Strother"
-    },
-    {
-      "firstName": "Thomas",
+      "firstName": "John",
       "lastName": "Strother",
-      "id": 3
+      " locationId": 1
     },
     {
-      "firstName": "Thomas",
-      "lastName": "Strother",
-      "id": 4
+      "firstName": "Jacob",
+      "lastName": "Johnson",
+      "id": 3,
+      "locationId": 2
     },
     {
-      "firstName": "Thomas",
-      "lastName": "Strother IV",
-      "id": 5
-    },
-    {
-      "firstName": "Thomas",
-      "lastName": "Strother IV",
-      "id": 6
+      "firstName": "Adam",
+      "lastName": "Hink",
+      "id": 4,
+      "locationId": 3
     }
   ],
   "locations": [
     {
       "id": 1,
       "city": "Nashville",
-      "state": "MO"
+      "state": "MO",
+      "employeeId": "2"
     },
     {
       "id": 2,
