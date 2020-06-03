@@ -3,7 +3,7 @@ import EmployeeManager from "../../modules/EmployeeManager";
 import "./EmployeeDetail.css";
 
 const EmployeeDetail = (props) => {
-  const [employee, setEmployee] = useState({ name: "", status: "" });
+  const [employee, setEmployee] = useState({ firstName: "", lastName: "" });
   const [isLoading, setIsLoading] = useState(true);
 
   const handleDelete = () => {
@@ -16,8 +16,8 @@ const EmployeeDetail = (props) => {
   useEffect(() => {
     EmployeeManager.get(props.employeeId).then((employee) => {
       setEmployee({
-        name: employee.name,
-        status: employee.status,
+        firstName: employee.firstName,
+        lastName: employee.lastName,
       });
       setIsLoading(false);
     });
@@ -34,9 +34,9 @@ const EmployeeDetail = (props) => {
           />
         </picture>
         <h3>
-          Employee Name: <span className="">{employee.name}</span>
+          Employee First Name: <span className="">{employee.firstName}</span>
           <br></br>
-          Employee Status: <span className="">{employee.status}</span>
+          Employee Last Name: <span className="">{employee.lastName}</span>
         </h3>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Fire

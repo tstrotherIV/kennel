@@ -24,16 +24,16 @@ const EmployeeEditForm = (props) => {
     };
 
     EmployeeManager.update(editedEmployee).then(() =>
-      props.history.push("/employees")
+      props.history.push(`/employees/${employee.id}/details`)
     );
   };
 
   useEffect(() => {
-    EmployeeManager.get(props.match.params.employeeId).then((animal) => {
-      setEmployee(animal);
+    EmployeeManager.get(props.match.params.employeeId).then((employee) => {
+      setEmployee(employee);
       setIsLoading(false);
     });
-  }, []);
+  }, [props.match.params.employeeId]);
 
   return (
     <>
@@ -46,7 +46,7 @@ const EmployeeEditForm = (props) => {
               className="form-control"
               onChange={handleFieldChange}
               id="fistName"
-              value={employee.fistName}
+              value={employee.firstName}
             />
             <label htmlFor="firstName">employee first name</label>
 
