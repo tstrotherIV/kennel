@@ -19,6 +19,9 @@ const LocationCard = (props) => {
         <p>
           {props.location.city}, {props.location.state}
         </p>
+        <p>
+          {props.location.employee.firstName} {props.location.employee.lastName}
+        </p>
       </div>
       <button
         onClick={() => {
