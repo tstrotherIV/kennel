@@ -76,7 +76,7 @@ const LocationEditForm = (props) => {
             >
               {employees.map((employee) => (
                 <option key={employee.id} value={employee.id}>
-                  {employee.firstName}
+                  {employee.firstName} {employee.lastName}
                 </option>
               ))}
             </select>
